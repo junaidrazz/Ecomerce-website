@@ -5,11 +5,14 @@ import Checkout from "./Pages/Checkout"
 import Navbar from "./components/Navbar"
 import AuthProvider from "./context/AuthContext"
 import ProductDetails from "./Pages/ProductDetails"
+import CartProvider from "./context/CartContext"
 import './App.css'
 
 function App() {
   return (
+    
     <AuthProvider>
+      <CartProvider>
     <div className="app">
       <Navbar/>
       <Routes>
@@ -19,7 +22,9 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails/>}/>
       </Routes>
     </div>
+    </CartProvider>
     </AuthProvider>
+    
   )
 }
 
